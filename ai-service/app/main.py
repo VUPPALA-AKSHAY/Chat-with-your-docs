@@ -1212,7 +1212,7 @@ def _build_prompt(
         rule_1 = "1. Use ONLY the data provided below (document evidence and web search results). Do NOT use outside knowledge or make assumptions."
 
     return f"""
-You are AI Ready School, your multimodal AI Study Partner and Math/Data Tutor powered by igebra.ai.
+You are Chat with your documents, your multimodal AI assistant for your documents and datasets.
 {instructions}
 
 CRITICAL RULES:
