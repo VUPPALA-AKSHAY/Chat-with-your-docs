@@ -1,8 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
+import fetch from "cross-fetch";
 import { env } from "../config/env.js";
 import { randomUUID } from "node:crypto";
 
-const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
+  global: { fetch }
+});
 
 function mapUser(user) {
   if (!user) return null;

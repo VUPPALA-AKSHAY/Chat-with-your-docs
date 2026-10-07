@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { z } from "zod";
-import axios from "axios";
+import http from "../utils/http.js";
 import AdmZip from "adm-zip";
 import Papa from "papaparse";
 import { env } from "../config/env.js";
@@ -30,7 +30,7 @@ function parseOwnerAndDataset(ref = "") {
 async function getFileCount(ownerSlug, datasetSlug, authHeader) {
   try {
     const url = 'https://api.kaggle.com/v1/datasets.DatasetApiService/ListDatasetFiles';
-    const res = await axios.post(url, {
+    const res = await http.post(url, {
       ownerSlug,
       datasetSlug,
       pageSize: 200
@@ -65,7 +65,7 @@ router.get("/search", async (req, res, next) => {
     const authHeader = 'Basic ' + Buffer.from(`${kaggleUser}:${kaggleToken}`).toString('base64');
 
     const searchUrl = `https://www.kaggle.com/api/v1/datasets/list?search=${encodeURIComponent(q)}`;
-    const response = await axios.get(searchUrl, {
+    const response = await http.get(searchUrl, {
       headers: {
         Authorization: authHeader
       }
@@ -136,7 +136,7 @@ async function ingestFilesAsync(userId, workspaceId, filesWithText, geminiKey) {
       const { fileRecord, text, metadata } = item;
 
       try {
-        await axios.post(`${env.AI_SERVICE_URL}/ingest`, {
+        await http.post(`${env.AI_SERVICE_URL}/ingest`, {
           workspace_id: workspaceId,
           file_id: fileRecord.id,
           file_name: fileRecord.name,
@@ -215,7 +215,7 @@ router.post("/import", async (req, res, next) => {
 
     console.log(`Downloading Kaggle dataset zip: ${downloadUrl}`);
 
-    const downloadRes = await axios.get(downloadUrl, {
+    const downloadRes = await http.get(downloadUrl, {
       headers: {
         Authorization: authHeader
       },

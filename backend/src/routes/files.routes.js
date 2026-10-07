@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { z } from "zod";
-import axios from "axios";
+import http from "../utils/http.js";
 import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
 import path from "node:path";
@@ -209,7 +209,7 @@ async function restoreRemoteFileCopy({ userId, workspaceId, file }) {
   if (!remoteUrl) return null;
 
   try {
-    const upstream = await axios.get(remoteUrl, {
+    const upstream = await http.get(remoteUrl, {
       responseType: "arraybuffer",
       timeout: 60000,
       validateStatus: (status) => status >= 200 && status < 400,
@@ -288,7 +288,7 @@ function buildIngestContent(file) {
 }
 
 async function ingestFileForRag({ user, workspaceId, file }) {
-  await axios.post(
+  await http.post(
     `${env.AI_SERVICE_URL}/ingest`,
     {
       workspace_id: workspaceId,
@@ -306,7 +306,7 @@ async function ingestFileForRag({ user, workspaceId, file }) {
 
 async function deleteFilesFromRag(workspaceId, fileIdsOrNames) {
   try {
-    await axios.post(
+    await http.post(
       `${env.AI_SERVICE_URL}/delete-files`,
       {
         workspace_id: workspaceId,
@@ -327,7 +327,7 @@ async function generateSummaryAndTopics(rawText) {
   }
 
   try {
-    const response = await axios.post(`${env.AI_SERVICE_URL}/summary`, {
+    const response = await http.post(`${env.AI_SERVICE_URL}/summary`, {
       text: rawText.substring(0, 50000)
     });
 

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { z } from "zod";
-import axios from "axios";
+import http from "../utils/http.js";
 import { env } from "../config/env.js";
 import { HttpError } from "../utils/http-error.js";
 import { getWorkspaceForUser, listFiles } from "../services/store.js";
@@ -152,7 +152,7 @@ router.post("/query", async (req, res, next) => {
       directContext
     );
 
-    const aiResponse = await axios.post(
+    const aiResponse = await http.post(
       `${env.AI_SERVICE_URL}/query`,
       {
         workspace_id: workspace.id,

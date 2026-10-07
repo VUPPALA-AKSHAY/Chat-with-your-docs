@@ -1,4 +1,4 @@
-import axios from "axios";
+import http from "../utils/http.js";
 import { OAuth2Client } from "google-auth-library";
 import { env } from "../config/env.js";
 import { HttpError } from "../utils/http-error.js";
@@ -55,7 +55,7 @@ export async function loginWithGoogleAccessToken(googleAccessToken) {
 
   let profile;
   try {
-    const response = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+    const response = await http.get("https://www.googleapis.com/oauth2/v3/userinfo", {
       headers: { Authorization: `Bearer ${googleAccessToken}` },
       timeout: 10000,
     });
