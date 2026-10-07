@@ -159,13 +159,13 @@ By default, all necessary platform APIs are already integrated.
 - Retriever: Hybrid retrieval
 - Ranking: Reciprocal Rank Fusion
 - Chunking: Character-based chunks with overlap
-- Answer model: GLM-5 via Cerebras-compatible API
+- Answer model: @cf/mistralai/mistral-small-3.1-24b-instruct via Cloudflare Workers AI (fallbacks: Cerebras, Groq, Gemini)
 
 ### External Services
 
 - Kaggle API for dataset search and import
 - Gemini for model or embedding workflows
-- Cerebras / GLM model endpoint for chat answers
+- Cloudflare Workers AI for chat answers (OpenAI-compatible endpoint)
 - Supabase for storage
 
 
