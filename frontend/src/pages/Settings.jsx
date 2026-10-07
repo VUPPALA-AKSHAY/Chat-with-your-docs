@@ -145,7 +145,7 @@ const Settings = () => {
                       value={profileEmail}
                       onChange={(e) => setProfileEmail(e.target.value)}
                       className="w-full bg-surface-container-lowest border border-transparent rounded-lg p-3 text-sm text-on-surface focus:outline-none focus:border-primary/30 transition-all duration-200"
-                      placeholder="e.g. akshay@aireadyschool.com"
+                      placeholder="e.g. akshay@Chat-with-your-docs.com"
                     />
                   </div>
                 </div>

@@ -126,10 +126,10 @@ const Login = ({ onLogin }) => {
   const titleText = (
     <span className="flex flex-col gap-2">
       <span className="font-display font-extrabold text-primary tracking-tight">
-        {isCreateMode ? "Create Account" : "AI Ready School"}
+        {isCreateMode ? "Create Account" : "Chat with your documents"}
       </span>
       <span className="font-light text-on-surface-variant text-sm uppercase tracking-wider">
-        {isCreateMode ? "Join the platform" : "AI Study Partner"}
+        {isCreateMode ? "Join the platform" : "Chat with your documents"}
       </span>
     </span>
   );

@@ -945,7 +945,7 @@ const Chat = () => {
         addMessageToChat(targetChatId, {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
-          sender: 'AI Ready School',
+          sender: 'Chat with your documents',
           version: modelName || selectedEngine,
           text: responseText,
           reasoning: reasoningPath,
@@ -1345,7 +1345,7 @@ const Chat = () => {
                 </div>
                 <div className="flex-grow space-y-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs text-primary font-bold">AI Ready School</span>
+                    <span className="text-xs text-primary font-bold">Chat with your documents</span>
                     <span className="text-[9px] text-on-surface-variant/40 bg-white/5 px-2 py-0.5 rounded border border-white/10">Typing...</span>
                   </div>
                   <div className="p-4 sm:p-6 rounded-2xl border border-outline-variant/30 bg-surface-container-low space-y-4">
@@ -1366,7 +1366,7 @@ const Chat = () => {
                 </div>
                 <div className="flex-grow space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="font-label-md text-xs text-primary font-bold">AI Ready School</span>
+                    <span className="font-label-md text-xs text-primary font-bold">Chat with your documents</span>
                     <span className="text-[10px] text-on-surface-variant/40 animate-pulse">Typing...</span>
                   </div>
                   <div className="chat-message-bubble chat-message-bubble-assistant rounded-xl p-5 bg-[#1b1b1d]/95 border border-white/[0.08] text-on-surface leading-relaxed font-body-md text-sm text-left shadow-[0_18px_50px_rgba(0,0,0,0.24)] space-y-4">
@@ -1419,7 +1419,7 @@ const Chat = () => {
                   }
                 }}
                 className="w-full bg-transparent border-none focus:ring-0 text-on-surface font-body-md text-sm p-3 resize-none min-h-[56px] max-h-48 custom-scrollbar focus:outline-none placeholder:text-on-surface-variant/30 text-sm"
-                placeholder={isRetrieving || isStreaming ? "AI Ready School is typing..." : "Ask AI Ready School a math, data, or study question (upload images if needed)..."}
+                placeholder={isRetrieving || isStreaming ? "Chat with your documents is typing..." : "Ask Chat with your documents a math, data, or study question (upload images if needed)..."}
                 rows={1}
                 disabled={isRetrieving || isStreaming}
               />

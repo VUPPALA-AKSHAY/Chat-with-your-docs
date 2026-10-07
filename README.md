@@ -1,6 +1,6 @@
-# AI Ready School RAG Chatbot
+# Chat with your documents RAG Chatbot
 
-AI Ready School is a chatbot app for asking questions about your own files and datasets.
+Chat with your documents is a chatbot app for asking questions about your own files and datasets.
 
 You can upload documents like PDF, Word, CSV, Excel, text, JSON, Markdown, and other file types, upload images for visual Q&A, or import datasets from Kaggle. After that, you can chat with the data and get answers in simple language. The app can use RAG retrieval, which means it first searches the uploaded file content and then sends the most useful context to the AI model. It also supports web search tool calling when the assistant needs fresh external information.
 
@@ -9,13 +9,13 @@ You can upload documents like PDF, Word, CSV, Excel, text, JSON, Markdown, and o
 Use this command to download the project:
 
 ```bash
-git clone https://github.com/VUPPALA-AKSHAY/AIREADYSCHOOL.git
-cd AIREADYSCHOOL
+git clone https://github.com/VUPPALA-AKSHAY/Chat-with-your-docs.git
+cd Chat-with-your-docs
 ```
 
 Repository link:
 
-https://github.com/VUPPALA-AKSHAY/AIREADYSCHOOL
+https://github.com/VUPPALA-AKSHAY/Chat-with-your-docs
 
 ## Main Features
 

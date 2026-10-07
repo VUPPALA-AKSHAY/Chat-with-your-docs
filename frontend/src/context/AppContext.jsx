@@ -17,7 +17,7 @@ function normalizeWelcomeMessage(text = '') {
   return LEGACY_WELCOME_MESSAGES.has(value) ? WELCOME_MESSAGE : text;
 }
 
-const DEMO_USER = { email: 'akshay@aireadyschool.com', name: 'Student' };
+const DEMO_USER = { email: 'akshay@Chat-with-your-docs.com', name: 'Student' };
 const DEMO_PROJECTS = [
   {
     id: 'demo-workspace',
@@ -74,7 +74,7 @@ const DEMO_MESSAGES = {
     {
       id: 'demo-msg-1',
       role: 'assistant',
-      sender: 'AI Ready School',
+      sender: 'Chat with your documents',
       version: 'v4.2.0',
       text: WELCOME_MESSAGE,
       time: '09:41 AM',
@@ -287,7 +287,7 @@ function mapMessageToUi(message, userName) {
   return {
     id: message.id,
     role: message.role,
-    sender: isAssistant ? 'AI Ready School' : userName || 'Student',
+    sender: isAssistant ? 'Chat with your documents' : userName || 'Student',
     version: isAssistant ? 'v4.2.0' : undefined,
     text: normalizeWelcomeMessage(text),
     sources: message.sources || [],
@@ -690,7 +690,7 @@ export const AppProvider = ({ children }) => {
           {
             id: `m${Date.now()}`,
             role: 'assistant',
-            sender: 'AI Ready School',
+            sender: 'Chat with your documents',
             version: 'v4.2.0',
             text: WELCOME_MESSAGE,
             time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
@@ -714,7 +714,7 @@ export const AppProvider = ({ children }) => {
       {
         id: `welcome-${chat.id}`,
         role: 'assistant',
-        sender: 'AI Ready School',
+        sender: 'Chat with your documents',
         version: 'v4.2.0',
         text: WELCOME_MESSAGE,
         time: createdAtLabel,
